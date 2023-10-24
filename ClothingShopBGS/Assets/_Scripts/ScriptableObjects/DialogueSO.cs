@@ -6,7 +6,7 @@ using UnityEngine;
 public class DialogueSO : ScriptableObject
 {
     [SerializeField][TextArea] string _DialogueText;
-    [SerializeField] DialogueMood _Mood;
+    [SerializeField] DialogueMood _Mood; //This will not be used in the task. It represents the mood of the dialogue so the NPC can adjust its image accordingly.
 
     [SerializeField] List<string> choices;
     public string GetDialogueText() { return _DialogueText; }
