@@ -3602,6 +3602,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 717762373378742224, guid: cfdff5d9eef2f014ca10aea9e82990d5, type: 3}
   m_PrefabInstance: {fileID: 1793680373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1793680375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 717762373378742225, guid: cfdff5d9eef2f014ca10aea9e82990d5, type: 3}
+  m_PrefabInstance: {fileID: 1793680373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1793680376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793680375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839233f29442f584da7d6d30df84b60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DialogueImage: {fileID: 0}
+  _DialogueText: {fileID: 0}
+  _TextDelay: 0.05
+  _SkipDialogueButton: {fileID: 0}
+  _DialogueHolder: {fileID: 0}
 --- !u!1001 &120578993218076616
 PrefabInstance:
   m_ObjectHideFlags: 0
