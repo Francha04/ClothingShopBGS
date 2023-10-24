@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D body;
-    private bool SetMove { get; set; }
+    
     float horizontal;
     float vertical;
 

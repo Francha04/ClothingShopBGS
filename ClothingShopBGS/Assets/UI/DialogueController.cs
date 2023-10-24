@@ -17,6 +17,8 @@ public class DialogueController : MonoBehaviour
     [SerializeField] CanvasGroup _DialogueHolder;
     private int _DialogueIndex = 0;
     bool typing;
+    public static DialogueController Instance { get; set; }
+    
     public enum DialogueType
     {
         Initial,
@@ -24,8 +26,15 @@ public class DialogueController : MonoBehaviour
         RefuseExitAttempt
         }
     private void Awake()    
-    {        
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
+        else Instance = this;
+
         _SkipDialogueButton.onClick.AddListener(SkipCurrentDialogue);
+        
     }
     public void StartSetOfDialogues(List<DialogueSO> thisDialogues) 
     {
@@ -79,5 +88,9 @@ public class DialogueController : MonoBehaviour
     private void EndDialogueSet() 
     {
         
+    }
+    private void OnDestroy()
+    {
+        _SkipDialogueButton.onClick.RemoveListener(SkipCurrentDialogue);
     }
 }
