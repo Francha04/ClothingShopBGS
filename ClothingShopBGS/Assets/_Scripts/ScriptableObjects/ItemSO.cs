@@ -5,5 +5,6 @@ using UnityEngine;
 public class ItemSO : MonoBehaviour
 {
     [SerializeField] string _ItemViewName;
-
+    [SerializeField] Sprite _ItemUIIcon;
+    [SerializeField] float _ItemPrice; //Whislt 0 equals free, -1 means that it has no price thus cannot be sold nor bought.
 }
