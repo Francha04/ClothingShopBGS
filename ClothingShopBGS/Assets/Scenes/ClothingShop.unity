@@ -1212,6 +1212,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ThisPlayerMovement: {fileID: 754504810}
+--- !u!114 &754504818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754504809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316d93d87fb75094ab67f73b222c1d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Hat: {fileID: 0}
+  _Clothes: {fileID: 0}
+  _HatItem: {fileID: 0}
+  _ClothesItem: {fileID: 0}
 --- !u!1 &948903325
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,14 +38,14 @@ public class DialogueController : MonoBehaviour
     }
     public void StartSetOfDialogues(List<DialogueSO> thisDialogues) 
     {
-
         dialogueList = thisDialogues;
         _DialogueIndex = 0;
         _DialogueImage.color = new Color(1f, 1f, 1f, 0f);
         _DialogueHolder.alpha = 0f;
         Sequence dotseq = DOTween.Sequence();
         _DialogueText.text = "";
-        dotseq.Append(_DialogueImage.DOFade(1f, 0.5f)).Append(_DialogueHolder.DOFade(1f, 0.5f)).OnComplete(RunNextDialogueOnList);        
+        dotseq.Append(_DialogueImage.DOFade(1f, 0.5f)).Append(_DialogueHolder.DOFade(1f, 0.5f)).OnComplete(RunNextDialogueOnList);
+        UIController.Instance.OpenCanvas(UIScreen.Dialogue);
     }
     private void RunNextDialogueOnList() 
     {
