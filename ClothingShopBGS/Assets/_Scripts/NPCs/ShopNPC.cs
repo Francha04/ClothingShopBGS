@@ -8,7 +8,8 @@ public class ShopNPC : NPC
     public InventorySO GetInventory() { return _NPCDataSO._ThisInventory; }
     public void OpenShop() 
     {
-        UIController.Instance.OpenCanvas(UIScreen.Shop);
+        //UIController.Instance.OpenShop(this);
+        InventoryController.Instance.LoadShopInventory(this);
     }
     public void CloseShop() 
     {

@@ -805,6 +805,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120578993242640298, guid: 3cf7f5cba938c1942ad04207ace8d3de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120578993242640298, guid: 3cf7f5cba938c1942ad04207ace8d3de, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -840,4 +844,4 @@ MonoBehaviour:
   _DialogueText: {fileID: 971805941}
   _TextDelay: 0.05
   _SkipDialogueButton: {fileID: 167834243}
-  _DialogueHolder: {fileID: 0}
+  _DialogueHolder: {fileID: 8040214110325845313}

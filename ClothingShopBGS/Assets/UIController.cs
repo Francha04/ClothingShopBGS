@@ -13,7 +13,12 @@ public class UIController : MonoBehaviour
         else
         {
             Instance = this;
-        }        
+        }
+        //GameplayEvents.OnShopOpen.AddListener(OpenShop);
+    }
+    public void OpenShop(InventorySO inventoryInfo) 
+    {
+        OpenCanvas(UIScreen.Shop);
     }
     public void OpenCanvas(UIScreen ScreenToOpen) 
     {

@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour, Interactable
 
     public void StartInteraction()
     {
-        DialogueController.Instance.StartSetOfDialogues(_NPCDataSO._IntroDialogues);
+        DialogueController.Instance.StartSetOfDialogues(_NPCDataSO._IntroDialogues); 
     }
 
 }
