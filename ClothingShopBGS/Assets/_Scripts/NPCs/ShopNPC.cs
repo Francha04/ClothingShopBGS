@@ -16,5 +16,11 @@ public class ShopNPC : NPC
         // Close Shop code
         DialogueController.Instance.StartSetOfDialogues(_NPCDataSO._CloseShopDialogues); ;
     }
+    public int GetStockOfItem(ItemSO item) 
+    {
+    //For this task we wont handle the exception of the item whose stock is being asked for not being on the inventory of the npc.    
+        return _NPCDataSO._ThisInventory._ItemsWithStock[item];
+                
+    }
 }
  

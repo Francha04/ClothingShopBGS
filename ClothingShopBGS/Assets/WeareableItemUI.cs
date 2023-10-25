@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,17 @@ public class WeareableItemUI : MonoBehaviour
     [SerializeField] Button _ThisButton;
     [SerializeField] Image _ThisSprite;
     [SerializeField] GameObject _EquippedVisuals;
+    [SerializeField] GameObject _OutOfStockVisuals;
+    [SerializeField] TextMeshProUGUI _StockText;
+    public InventoryController _InventoryController;
+    private void Awake()
+    {
+        _ThisButton.onClick.AddListener(OnButtonClick);
+    }
+    private void OnButtonClick() 
+    {
+        InventoryController.Instance.OnClick(_CurrentItem);
+    }
     public void SetItem(WearableItemSO item) 
     {
         _CurrentItem = item;
@@ -20,6 +32,22 @@ public class WeareableItemUI : MonoBehaviour
     public void SetItemEquipped(bool equipped) 
     {
         _EquippedVisuals.SetActive(equipped);
+    }
+    public void SetStock(int stock)
+    {
+        if (stock < 0) { print("Negative stock on item: " + this.gameObject.name); return; }       
+        if (stock == -1) {
+            _StockText.text = "";
+            _OutOfStockVisuals.SetActive(false);
+            return;
+        }
+        _StockText.text = stock.ToString();
+        if (stock == 0) { _OutOfStockVisuals.SetActive(true); }
+        else {            
+            _OutOfStockVisuals.SetActive(false);
+        }
+        
+        
     }
 
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public static InventoryController Instance;
+    public ShopNPC _CurrentNPC = null;
+    [SerializeField] InventoryGridUI _ThisGridUI;
     private void Awake()
     {
         if (Instance != null)
@@ -15,6 +17,13 @@ public class InventoryController : MonoBehaviour
     }
     public void LoadShopInventory(ShopNPC ShopData) 
     {
-        UIController.Instance.OpenShop(ShopData.GetInventory());
+        _CurrentNPC = ShopData;
+        UIController.Instance.OpenCanvas(UIScreen.Inventory);
+        _ThisGridUI.LoadInventory(ShopData.GetInventory());
+    }
+    public void OnClick(WearableItemSO itemClicked) 
+    {
+        int stock = _CurrentNPC.GetStockOfItem(itemClicked);           
+        
     }
 }
