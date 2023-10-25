@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This script is adapted from another project.
 public class UIController : MonoBehaviour
 {
     public static UIController Instance;
-    [SerializeField] Dictionary<UIScreen, Canvas> canvasByType = new Dictionary<UIScreen, Canvas>();
+
+    [SerializeField] private Canvas _MainCanvas;
+    [SerializeField] private Canvas _InventoryCanvas;
+    [SerializeField] private Canvas _DialogueCanvas;
+    Dictionary<UIScreen, Canvas> canvasByType = new Dictionary<UIScreen, Canvas>();
     private void Awake()
     {
         if (Instance != null) { Destroy(this); }
@@ -14,7 +19,11 @@ public class UIController : MonoBehaviour
         {
             Instance = this;
         }
-        //GameplayEvents.OnShopOpen.AddListener(OpenShop);
+        canvasByType.Clear();
+        canvasByType.Add(UIScreen.Main, _MainCanvas);
+        canvasByType.Add(UIScreen.Inventory, _InventoryCanvas);
+        canvasByType.Add(UIScreen.Dialogue, _DialogueCanvas);
+        //GameplayEvents.OnShopOpen.AddListener(OpenShop); For now will not be used.
     }
     public void OpenShop(InventorySO inventoryInfo) 
     {
@@ -39,3 +48,4 @@ public enum UIScreen
     Dialogue,
     Shop
 }
+//When adding a new screen, add it to the enum and to the dictionary.

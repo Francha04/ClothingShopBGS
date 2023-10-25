@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/WeareableItem", order = 4)]
+[CreateAssetMenu(fileName = "WearableItemSO", menuName = "ScriptableObjects/WeareableItem", order = 4)]
 public class WearableItemSO : ItemSO
 {
     [SerializeField] Sprite _UpSprite;

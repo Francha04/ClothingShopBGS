@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/InventoryItem", order = 3)]
-public class ItemSO : MonoBehaviour
+[CreateAssetMenu(fileName = "ItemSO", menuName = "ScriptableObjects/InventoryItem", order = 3)]
+
+//If you are making a store, place these items inside ItemWithStockSO objects.
+public class ItemSO : ScriptableObject
 {
     public string _ItemViewName { get; set; } = "NullItem";
     public Sprite _ItemSprite { get; set; }

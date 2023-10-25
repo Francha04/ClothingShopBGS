@@ -10,11 +10,11 @@ public class InventoryGridUI : MonoBehaviour
    
     public void LoadInventory(InventorySO inventory) 
     {
-        foreach (var item in inventory._ItemsWithStock)
+        foreach (var itemWithStock in inventory._ItemsWithStock)
         {
             GameObject newItem = Instantiate(_ItemUIPrefab, this.transform);            
             WeareableItemUI thisWeareableItemUI = newItem.GetComponent<WeareableItemUI>();
-            thisWeareableItemUI.SetItem((WearableItemSO) item.Key); 
+            thisWeareableItemUI.SetItem((WearableItemSO) itemWithStock._Item); 
             //Simply casting this as Weareable item since the stock script does accept normal items, but for
             //this task I'm not making the separate normal item UI prefab and ItemUI.cs script.
 

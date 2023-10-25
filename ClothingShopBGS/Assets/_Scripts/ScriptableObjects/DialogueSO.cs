@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Script taken from another project.
-[CreateAssetMenu(fileName = "Dialogue", menuName = "ScriptableObjects/Dialogue", order = 2)]
+[CreateAssetMenu(fileName = "DialogueSO", menuName = "ScriptableObjects/Dialogue", order = 2)]
 public class DialogueSO : ScriptableObject
 {
     [SerializeField][TextArea] string _DialogueText;

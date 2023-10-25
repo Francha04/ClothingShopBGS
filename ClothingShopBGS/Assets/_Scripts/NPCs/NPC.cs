@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour, Interactable
 {
-    [SerializeField] protected NPCSO _NPCDataSO;
+    public NPCSO _NPCDataSO;
 
     public void StartInteraction()
     {
-        DialogueController.Instance.StartSetOfDialogues(_NPCDataSO._IntroDialogues); 
+        DialogueController.Instance.StartSetOfDialogues(_NPCDataSO._InteractionBasicDialogues); 
     }
 
 }
