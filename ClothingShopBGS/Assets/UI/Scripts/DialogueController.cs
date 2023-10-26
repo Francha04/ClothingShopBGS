@@ -38,6 +38,7 @@ public class DialogueController : MonoBehaviour
     }
     public void StartSetOfDialogues(List<DialogueSO> thisDialogues) 
     {
+        GameplayEvents.OnOpenDialogue.Invoke();
         dialogueList = thisDialogues;
         _DialogueIndex = 0;
         _DialogueImage.color = new Color(1f, 1f, 1f, 0f);
@@ -87,7 +88,8 @@ public class DialogueController : MonoBehaviour
     }
     private void EndDialogueSet() 
     {
-        
+        UIController.Instance.CloseCanvas(UIScreen.Dialogue);
+        GameplayEvents.OnClosedDialogue.Invoke();
     }
     private void OnDestroy()
     {

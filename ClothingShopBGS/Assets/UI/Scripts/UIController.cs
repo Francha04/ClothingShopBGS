@@ -25,15 +25,22 @@ public class UIController : MonoBehaviour
         canvasByType.Add(UIScreen.Dialogue, _DialogueCanvas);
         //GameplayEvents.OnShopOpen.AddListener(OpenShop); For now will not be used.
     }
-    public void OpenShop(InventorySO inventoryInfo) 
-    {
-        OpenCanvas(UIScreen.Shop);
-    }
     public void OpenCanvas(UIScreen ScreenToOpen) 
     {
         foreach (UIScreen canv in canvasByType.Keys)
         {
             if (ScreenToOpen == canv) { canvasByType[ScreenToOpen].enabled = true; }
+            else if (canv != UIScreen.Main)
+            {
+                canvasByType[canv].enabled = false;
+            }
+        }
+    }
+    public void CloseCanvas(UIScreen ScreenToOpen)
+    {
+        foreach (UIScreen canv in canvasByType.Keys)
+        {
+            if (ScreenToOpen == canv) { canvasByType[ScreenToOpen].enabled = false; }
             else if (canv != UIScreen.Main)
             {
                 canvasByType[canv].enabled = false;

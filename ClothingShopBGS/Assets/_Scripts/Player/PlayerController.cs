@@ -6,6 +6,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerMovement _ThisPlayerMovement;
+    [SerializeField] PlayerInteraction _ThisPlayerInteraction;
+    private void Awake()
+    {
+        GameplayEvents.OnOpenDialogue.AddListener(DisableMovement);        
+        GameplayEvents.OnClosedDialogue.AddListener(EnableMovement);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) { _ThisPlayerInteraction.Interact(); }
+        if (Input.GetKeyDown(KeyCode.I)) 
+        {
+            UIController.Instance.OpenCanvas(UIScreen.Inventory);
+        }
+    }
+    private void DisableMovement() 
+    {
+        _ThisPlayerMovement.enabled = false;
+    }
+    private void EnableMovement() 
+    {
+        _ThisPlayerMovement.enabled = true;
+    }
     public PlayerDirections GetDirection() 
     {
         return _ThisPlayerMovement.GetCurrentDirection();

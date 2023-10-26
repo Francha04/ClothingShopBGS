@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce9332fc294fa84bbdcc7f01e7b4be3, type: 3}
-  m_Name: ShopNPCDataSO
+  m_Script: {fileID: 11500000, guid: 80194ee579f7fad49b0a2df49da17802, type: 3}
+  m_Name: DialogueSO
   m_EditorClassIdentifier: 
-  _ThisInventory: {fileID: 11400000, guid: f64fa1feb8ab7de4aac63826cdf72ebe, type: 2}
-  _CloseShopDialogues:
-  - {fileID: 11400000, guid: 782546ed1cf160741b6a340a780ae523, type: 2}
+  _DialogueText: Hey
+  _Mood: 0
+  choices: []

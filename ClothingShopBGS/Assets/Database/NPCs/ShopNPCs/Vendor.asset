@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7830f4e3938e704499630e4bff609643, type: 3}
   m_Name: Vendor
   m_EditorClassIdentifier: 
+  _InteractionBasicDialogues:
+  - {fileID: 11400000, guid: 782546ed1cf160741b6a340a780ae523, type: 2}
